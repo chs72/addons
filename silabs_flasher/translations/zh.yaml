@@ -1,0 +1,16 @@
+configuration:
+  bootloader_baudrate:
+    description: 在引导加载模式下与 Silicon Labs 无线电通信所使用的串口波特率。
+    name: 引导加载程序波特率
+  device:
+    description: Silicon Labs 无线电连接的串口。
+    name: 设备
+  firmware_url:
+    description: 从 URL 下载并烧录自定义固件。
+    name: 固件 URL
+  flow_control:
+    description: 启用串口的硬件流控。
+    name: 硬件流控
+  verbose:
+    description: 以详细模式启动 universal-silabs-flasher。
+    name: 详细模式
