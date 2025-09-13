@@ -1,5 +1,5 @@
 ---
-version: 0.3.4
+version: 0.0.1
 slug: silabs_flasher1
 name: Silicon Labs Flasher1
 description: Silicon Labs firmware flasher add-on
