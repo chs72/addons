@@ -1,16 +1,25 @@
 configuration:
-  bootloader_baudrate:
-    description: 在引导加载模式下与 Silicon Labs 无线电通信所使用的串口波特率。
-    name: 引导加载程序波特率
   device:
-    description: Silicon Labs 无线电连接的串口。
-    name: 设备
+    description: Silicon Labs Zigbee网关的IP地址。
+    name: 设备IP地址
+  port:
+    description: Silicon Labs Zigbee网关的端口。
+    name: 设备端口
+  bootloader_baudrate:
+    description: 在Bootloader下与 Zigbee网关 通信所使用的串口波特率。
+    name: Bootloader波特率
+  ezsp_baudrate:
+    description: 在NCP固件下与 Zigbee网关 通信所使用的串口波特率。
+    name: ezsp波特率
   firmware_url:
-    description: 从 URL 下载并烧录自定义固件。
+    description: 从 URL 下载并烧录自定义固件，留空为读取信息。
     name: 固件 URL
-  flow_control:
-    description: 启用串口的硬件流控。
-    name: 硬件流控
+  allow_cross_flashing:
+    description: 如果提供的固件镜像类型与当前运行的镜像类型不匹配，则不会烧写固件，选中为允许刷入。
+    name: 允许跨平台刷入固件
+  allow_downgrades:
+    description: 如果提供的固件镜像版本低于当前运行的镜像版本，则不允许降级，选中为允许刷入。
+    name: 允许降级固件
   verbose:
-    description: 以详细模式启动 universal-silabs-flasher。
-    name: 详细模式
+    description: 以详细日志模式启动 universal-silabs-flasher。
+    name: 打印详细日志
