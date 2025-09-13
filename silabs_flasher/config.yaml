@@ -16,14 +16,20 @@ hassio_api: true
 image: homeassistant/{arch}-addon-silabs-flasher
 init: false
 options:
-  device: null
+  device: socket://
+  port: 6636
   bootloader_baudrate: "115200"
-  flow_control: false
+  ezsp_baudrate: "115200"
+  allow_cross_flashing: false
+  allow_downgrades: false
   verbose: false
 schema:
   device: str?
-  bootloader_baudrate: list(57600|115200|230400|460800|921600)
-  flow_control: bool?
+  port: port
+  bootloader_baudrate: list(115200)
+  ezsp_baudrate: list(115200)
+  allow_cross_flashing: bool?
+  allow_downgrades: bool?
   firmware_url: str?
   verbose: bool?
 stage: experimental
