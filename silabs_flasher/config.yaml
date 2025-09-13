@@ -11,7 +11,7 @@ arch:
   - armhf
   - armv7
   - i386
-gpio: true
+# gpio: true
 hassio_api: true
 # image: homeassistant/{arch}-addon-silabs-flasher
 init: false
