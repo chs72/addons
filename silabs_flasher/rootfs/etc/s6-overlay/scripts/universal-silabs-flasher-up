@@ -14,6 +14,8 @@ declare port
 declare bootloader_baudrate
 declare ezsp_baudrate
 declare firmware
+declare allow_cross_flashing
+declare allow_downgrades
 declare verbose
 
 declare exit_status
@@ -63,6 +65,8 @@ if bashio::config.has_value 'firmware_url'; then
     --device ${device} \
     --bootloader-baudrate "${bootloader_baudrate}" \
     --ezsp-baudrate "${ezsp_baudrate}" \
+    --probe-method "bootloader" \
+    --probe-method "ezsp" \
     flash --firmware "/root/${firmware}" \
     ${allow_cross_flashing} \
     ${allow_downgrades} 
@@ -73,6 +77,8 @@ else
     --device ${device} \
     --bootloader-baudrate "${bootloader_baudrate}" \
     --ezsp-baudrate "${ezsp_baudrate}" \
-    probe --probe-method "bootloader ezsp"
+    --probe-method "bootloader" \
+    --probe-method "ezsp" \
+    probe
     bashio::log.warning "结束读取信息"
 fi
