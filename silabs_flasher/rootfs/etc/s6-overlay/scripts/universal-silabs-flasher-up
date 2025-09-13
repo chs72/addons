@@ -74,5 +74,5 @@ else
     --bootloader-baudrate "${bootloader_baudrate}" \
     --ezsp-baudrate "${ezsp_baudrate}" \
     probe --probe-method "bootloader ezsp"
-    
+    bashio::log.warning "结束读取信息"
 fi
